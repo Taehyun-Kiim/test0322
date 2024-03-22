@@ -6,26 +6,15 @@ const svg = d3
   .attr("width", 500)
   .attr("height", 500);
 
-const data = [
-  { x: 30, y: 30, radius: 20 },
-  { x: 70, y: 70, radius: 15 },
-  { x: 110, y: 100, radius: 25 },
-  { x: 150, y: 30, radius: 10 },
-  { x: 190, y: 90, radius: 20 },
+const data1 = [
+  { x: 30, y: 100 },
+  { x: 70, y: 100 },
+  { x: 110, y: 100 },
+  { x: 150, y: 100 },
+  { x: 190, y: 100 },
 ];
 
-const circles = svg
-  .selectAll("circle")
-  .data(data)
-  .enter()
-  .append("circle")
-  .attr("cx", (d) => d.x)
-  .attr("cy", (d) => d.y)
-  .attr("r", (d) => d.radius)
-  .attr("fill", "blue")
-  .attr("stroke", "black");
-
-const data = [
+const data2 = [
   {
     fruit: "사과",
     quantity: 20,
@@ -70,11 +59,11 @@ const data = [
 
 const circles = svg
   .selectAll("circle")
-  .data(data)
+  .data(data2)
   .enter()
   .append("circle")
-  .attr("cx", (d) => d.x)
-  .attr("cy", (d) => d.y)
-  .attr("r", (d) => d.radius)
-  .attr("fill", "blue")
-  .attr("stroke", "black");
+  .attr("cx", (data1) => d.x)
+  .attr("cy", (data1) => d.y)
+  .attr("r", (d) => d.quantity)
+  .attr(text, (d) => d.fruit)
+  .attr("fill", (d) => d.color);
