@@ -3,18 +3,10 @@ import * as d3 from "d3";
 const svg = d3
   .select("body")
   .append("svg")
-  .attr("width", 500)
+  .attr("width", 2000)
   .attr("height", 500);
 
-const data1 = [
-  { x: 30, y: 100 },
-  { x: 70, y: 100 },
-  { x: 110, y: 100 },
-  { x: 150, y: 100 },
-  { x: 190, y: 100 },
-];
-
-const data2 = [
+const data = [
   {
     fruit: "사과",
     quantity: 20,
@@ -59,11 +51,11 @@ const data2 = [
 
 const circles = svg
   .selectAll("circle")
-  .data(data2)
+  .data(data)
   .enter()
   .append("circle")
-  .attr("cx", (data1) => d.x)
-  .attr("cy", (data1) => d.y)
+  .attr("cx", (d) => d.quantity * 10)
+  .attr("cy", 200)
   .attr("r", (d) => d.quantity)
-  .attr(text, (d) => d.fruit)
-  .attr("fill", (d) => d.color);
+  .attr("fill", (d) => d.color)
+  .attr(text, (d) => d.price);
