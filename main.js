@@ -54,8 +54,7 @@ const circles = svg
   .data(data)
   .enter()
   .append("circle")
-  .attr("cx", (d) => d.quantity * 10)
-  .attr("cy", 200)
+  .attr("cx", (d) => d.details.price * 400)
+  .attr("cy", 300)
   .attr("r", (d) => d.quantity)
-  .attr("fill", (d) => d.color)
-  .attr(text, (d) => d.price);
+  .attr("fill", (d) => d.details.color);
